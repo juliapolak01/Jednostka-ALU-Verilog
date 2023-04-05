@@ -1,0 +1,4 @@
+../MODEL/exe_unit.sv:25: warning: Port 4 (o_crc) of crc4_eval expects 3 bits, got 8.
+../MODEL/exe_unit.sv:25:        : Padding 5 high bits of the expression.
+../MODEL/exe_unit.sv:26: warning: Port 4 (o_crc) of crc3_eval expects 3 bits, got 8.
+../MODEL/exe_unit.sv:26:        : Padding 5 high bits of the expression.

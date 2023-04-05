@@ -1,0 +1,3105 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.12+3 (git sha1 UNKNOWN, gcc 11.2.1 -O2 -fexceptions -fstack-protector-strong -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fPIC -Os)
+
+
+-- Executing script file `run.ys' --
+
+1. Executing Verilog-2005 frontend: ../MODEL/crc3.sv
+Parsing SystemVerilog input from `../MODEL/crc3.sv' to AST representation.
+Generating RTLIL representation for module `\crc3_eval'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ../MODEL/crc4.sv
+Parsing SystemVerilog input from `../MODEL/crc4.sv' to AST representation.
+Generating RTLIL representation for module `\crc4_eval'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ../MODEL/exe_unit.sv
+Parsing SystemVerilog input from `../MODEL/exe_unit.sv' to AST representation.
+Generating RTLIL representation for module `\exe_unit'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: ../MODEL/priorytet.sv
+Parsing SystemVerilog input from `../MODEL/priorytet.sv' to AST representation.
+Generating RTLIL representation for module `\dekoder_piorytetowy'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: ../MODEL/termometr.sv
+Parsing SystemVerilog input from `../MODEL/termometr.sv' to AST representation.
+Generating RTLIL representation for module `\thermometer2U2'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: ../MODEL/u1.sv
+Parsing SystemVerilog input from `../MODEL/u1.sv' to AST representation.
+Generating RTLIL representation for module `\u1intou2'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: ../MODEL/u2intoGray.sv
+Parsing SystemVerilog input from `../MODEL/u2intoGray.sv' to AST representation.
+Generating RTLIL representation for module `\u2intoGray'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: ../MODEL/zliczanie.sv
+Parsing SystemVerilog input from `../MODEL/zliczanie.sv' to AST representation.
+Generating RTLIL representation for module `\zliczanie_1'.
+Successfully finished Verilog frontend.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \exe_unit_rtl
+Used module:     \u2intoGray
+Used module:     \u1intou2
+Used module:     \crc4_eval
+Used module:     \crc3_eval
+Used module:     \zliczanie_1
+Used module:     \thermometer2U2
+Used module:     \dekoder_piorytetowy
+Parameter \BITS = 8
+
+9.2. Executing AST frontend in derive mode using pre-parsed AST for module `\u2intoGray'.
+Parameter \BITS = 8
+Generating RTLIL representation for module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Parameter \BITS = 8
+
+9.3. Executing AST frontend in derive mode using pre-parsed AST for module `\u1intou2'.
+Parameter \BITS = 8
+Generating RTLIL representation for module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Parameter \WCODE = 8
+Parameter \WPOLY = 4
+
+9.4. Executing AST frontend in derive mode using pre-parsed AST for module `\crc4_eval'.
+Parameter \WCODE = 8
+Parameter \WPOLY = 4
+Generating RTLIL representation for module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Parameter \WCODE = 8
+Parameter \WPOLY = 4
+
+9.5. Executing AST frontend in derive mode using pre-parsed AST for module `\crc3_eval'.
+Parameter \WCODE = 8
+Parameter \WPOLY = 4
+Generating RTLIL representation for module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Parameter \BITS = 8
+
+9.6. Executing AST frontend in derive mode using pre-parsed AST for module `\zliczanie_1'.
+Parameter \BITS = 8
+Generating RTLIL representation for module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Parameter \LEN = 8
+
+9.7. Executing AST frontend in derive mode using pre-parsed AST for module `\thermometer2U2'.
+Parameter \LEN = 8
+Generating RTLIL representation for module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Parameter \M = 8
+
+9.8. Executing AST frontend in derive mode using pre-parsed AST for module `\dekoder_piorytetowy'.
+Parameter \M = 8
+Generating RTLIL representation for module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+
+9.9. Analyzing design hierarchy..
+Top module:  \exe_unit_rtl
+Used module:     $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\u1intou2\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval
+Used module:     $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000
+Used module:     $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000
+
+9.10. Analyzing design hierarchy..
+Top module:  \exe_unit_rtl
+Used module:     $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\u1intou2\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval
+Used module:     $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000
+Used module:     $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000
+Removing unused module `\zliczanie_1'.
+Removing unused module `\u2intoGray'.
+Removing unused module `\u1intou2'.
+Removing unused module `\thermometer2U2'.
+Removing unused module `\dekoder_piorytetowy'.
+Removing unused module `\exe_unit'.
+Removing unused module `\crc4_eval'.
+Removing unused module `\crc3_eval'.
+Removed 8 unused modules.
+Warning: Resizing cell port exe_unit_rtl.crc4_eval.o_crc from 8 bits to 3 bits.
+Warning: Resizing cell port exe_unit_rtl.crc3_eval.o_crc from 8 bits to 3 bits.
+
+10. Executing SYNTH pass.
+
+10.1. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1.1. Analyzing design hierarchy..
+Top module:  \exe_unit_rtl
+Used module:     $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\u1intou2\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval
+Used module:     $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000
+Used module:     $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000
+
+10.1.2. Analyzing design hierarchy..
+Top module:  \exe_unit_rtl
+Used module:     $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\u1intou2\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval
+Used module:     $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000
+Used module:     $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000
+Removed 0 unused modules.
+
+10.2. Executing PROC pass (convert processes to netlists).
+
+10.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 8 switch rules as full_case in process $proc$../MODEL/priorytet.sv:10$203 in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Marked 8 switch rules as full_case in process $proc$../MODEL/termometr.sv:9$194 in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Marked 8 switch rules as full_case in process $proc$../MODEL/zliczanie.sv:0$177 in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Marked 8 switch rules as full_case in process $proc$../MODEL/crc3.sv:14$152 in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Marked 8 switch rules as full_case in process $proc$../MODEL/crc4.sv:14$127 in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Marked 1 switch rules as full_case in process $proc$../MODEL/u1.sv:10$124 in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Marked 1 switch rules as full_case in process $proc$../MODEL/u2intoGray.sv:7$120 in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Marked 20 switch rules as full_case in process $proc$../MODEL/exe_unit.sv:0$34 in module exe_unit_rtl.
+Removed a total of 0 dead cases.
+
+10.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 26 assignments to connections.
+
+10.2.4. Executing PROC_INIT pass (extract init attributes).
+
+10.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+10.2.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$proc$../MODEL/priorytet.sv:10$203'.
+     1/16: $8\s[0:0]
+     2/16: $8\o_result[7:0]
+     3/16: $7\s[0:0]
+     4/16: $7\o_result[7:0]
+     5/16: $6\s[0:0]
+     6/16: $6\o_result[7:0]
+     7/16: $5\s[0:0]
+     8/16: $5\o_result[7:0]
+     9/16: $4\s[0:0]
+    10/16: $4\o_result[7:0]
+    11/16: $3\s[0:0]
+    12/16: $3\o_result[7:0]
+    13/16: $2\s[0:0]
+    14/16: $2\o_result[7:0]
+    15/16: $1\s[0:0]
+    16/16: $1\o_result[7:0]
+Creating decoders for process `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$proc$../MODEL/termometr.sv:9$194'.
+     1/8: $8\o_result[7:0]
+     2/8: $7\o_result[7:0]
+     3/8: $6\o_result[7:0]
+     4/8: $5\o_result[7:0]
+     5/8: $4\o_result[7:0]
+     6/8: $3\o_result[7:0]
+     7/8: $2\o_result[7:0]
+     8/8: $1\o_result[7:0]
+Creating decoders for process `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/zliczanie.sv:0$177'.
+     1/8: $8\wynik[7:0]
+     2/8: $7\wynik[7:0]
+     3/8: $6\wynik[7:0]
+     4/8: $5\wynik[7:0]
+     5/8: $4\wynik[7:0]
+     6/8: $3\wynik[7:0]
+     7/8: $2\wynik[7:0]
+     8/8: $1\wynik[7:0]
+Creating decoders for process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$proc$../MODEL/crc3.sv:14$152'.
+     1/8: $8\crc_tmp[10:0]
+     2/8: $7\crc_tmp[10:0]
+     3/8: $6\crc_tmp[10:0]
+     4/8: $5\crc_tmp[10:0]
+     5/8: $4\crc_tmp[10:0]
+     6/8: $3\crc_tmp[10:0]
+     7/8: $2\crc_tmp[10:0]
+     8/8: $1\crc_tmp[10:0]
+Creating decoders for process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$proc$../MODEL/crc4.sv:14$127'.
+     1/8: $8\crc_tmp[10:0]
+     2/8: $7\crc_tmp[10:0]
+     3/8: $6\crc_tmp[10:0]
+     4/8: $5\crc_tmp[10:0]
+     5/8: $4\crc_tmp[10:0]
+     6/8: $3\crc_tmp[10:0]
+     7/8: $2\crc_tmp[10:0]
+     8/8: $1\crc_tmp[10:0]
+Creating decoders for process `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/u1.sv:10$124'.
+     1/1: $1\o_result[7:0]
+Creating decoders for process `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/u2intoGray.sv:7$120'.
+     1/1: $1\o_gray[7:0]
+Creating decoders for process `\exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+     1/21: $1\o_PF[0:0]
+     2/21: $16\jedynki[31:0]
+     3/21: $15\jedynki[31:0]
+     4/21: $14\jedynki[31:0]
+     5/21: $13\jedynki[31:0]
+     6/21: $12\jedynki[31:0]
+     7/21: $11\jedynki[31:0]
+     8/21: $10\jedynki[31:0]
+     9/21: $9\jedynki[31:0]
+    10/21: $1\o_BF[0:0]
+    11/21: $8\jedynki[31:0]
+    12/21: $7\jedynki[31:0]
+    13/21: $6\jedynki[31:0]
+    14/21: $5\jedynki[31:0]
+    15/21: $4\jedynki[31:0]
+    16/21: $3\jedynki[31:0]
+    17/21: $2\jedynki[31:0]
+    18/21: $1\jedynki[31:0]
+    19/21: $1\o_ZF[0:0]
+    20/21: $1\o_VF[0:0]
+    21/21: $1\o_result[7:0]
+
+10.2.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.\i' from process `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$proc$../MODEL/priorytet.sv:10$203'.
+No latch inferred for signal `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.\o_result' from process `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$proc$../MODEL/priorytet.sv:10$203'.
+No latch inferred for signal `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.\s' from process `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$proc$../MODEL/priorytet.sv:10$203'.
+No latch inferred for signal `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.\i' from process `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$proc$../MODEL/termometr.sv:9$194'.
+No latch inferred for signal `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.\o_result' from process `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$proc$../MODEL/termometr.sv:9$194'.
+No latch inferred for signal `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.\i' from process `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/zliczanie.sv:0$177'.
+No latch inferred for signal `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.\o_result' from process `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/zliczanie.sv:0$177'.
+No latch inferred for signal `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.\licz' from process `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/zliczanie.sv:0$177'.
+No latch inferred for signal `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.\wynik' from process `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/zliczanie.sv:0$177'.
+No latch inferred for signal `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.\o_crc' from process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$proc$../MODEL/crc3.sv:14$152'.
+No latch inferred for signal `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.\crc_tmp' from process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$proc$../MODEL/crc3.sv:14$152'.
+No latch inferred for signal `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.\poly_tmp' from process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$proc$../MODEL/crc3.sv:14$152'.
+No latch inferred for signal `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.\i' from process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$proc$../MODEL/crc3.sv:14$152'.
+No latch inferred for signal `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.\o_crc' from process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$proc$../MODEL/crc4.sv:14$127'.
+No latch inferred for signal `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.\crc_tmp' from process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$proc$../MODEL/crc4.sv:14$127'.
+No latch inferred for signal `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.\poly_tmp' from process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$proc$../MODEL/crc4.sv:14$127'.
+No latch inferred for signal `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.\i' from process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$proc$../MODEL/crc4.sv:14$127'.
+No latch inferred for signal `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000.\o_result' from process `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/u1.sv:10$124'.
+No latch inferred for signal `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.\o_gray' from process `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/u2intoGray.sv:7$120'.
+No latch inferred for signal `\exe_unit_rtl.\i' from process `\exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+No latch inferred for signal `\exe_unit_rtl.\o_result' from process `\exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+No latch inferred for signal `\exe_unit_rtl.\o_VF' from process `\exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+No latch inferred for signal `\exe_unit_rtl.\o_ZF' from process `\exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+No latch inferred for signal `\exe_unit_rtl.\o_PF' from process `\exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+No latch inferred for signal `\exe_unit_rtl.\o_BF' from process `\exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+No latch inferred for signal `\exe_unit_rtl.\jedynki' from process `\exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+
+10.2.8. Executing PROC_DFF pass (convert process syncs to FFs).
+
+10.2.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+10.2.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 8 empty switches in `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$proc$../MODEL/priorytet.sv:10$203'.
+Removing empty process `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$proc$../MODEL/priorytet.sv:10$203'.
+Found and cleaned up 8 empty switches in `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$proc$../MODEL/termometr.sv:9$194'.
+Removing empty process `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$proc$../MODEL/termometr.sv:9$194'.
+Found and cleaned up 8 empty switches in `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/zliczanie.sv:0$177'.
+Removing empty process `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/zliczanie.sv:0$177'.
+Found and cleaned up 8 empty switches in `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$proc$../MODEL/crc3.sv:14$152'.
+Removing empty process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$proc$../MODEL/crc3.sv:14$152'.
+Found and cleaned up 8 empty switches in `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$proc$../MODEL/crc4.sv:14$127'.
+Removing empty process `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$proc$../MODEL/crc4.sv:14$127'.
+Found and cleaned up 1 empty switch in `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/u1.sv:10$124'.
+Removing empty process `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/u1.sv:10$124'.
+Found and cleaned up 1 empty switch in `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/u2intoGray.sv:7$120'.
+Removing empty process `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.$proc$../MODEL/u2intoGray.sv:7$120'.
+Found and cleaned up 20 empty switches in `\exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+Removing empty process `exe_unit_rtl.$proc$../MODEL/exe_unit.sv:0$34'.
+Cleaned up 62 empty switches.
+
+10.2.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+<suppressed ~17 debug messages>
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+<suppressed ~8 debug messages>
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+<suppressed ~9 debug messages>
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+<suppressed ~16 debug messages>
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+<suppressed ~16 debug messages>
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+<suppressed ~3 debug messages>
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+<suppressed ~2 debug messages>
+Optimizing module exe_unit_rtl.
+<suppressed ~21 debug messages>
+
+10.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+<suppressed ~2 debug messages>
+
+10.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 2 unused cells and 263 unused wires.
+<suppressed ~12 debug messages>
+
+10.5. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval...
+Checking module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval...
+Checking module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000...
+Checking module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000...
+Checking module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000...
+Checking module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000...
+Checking module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000...
+Checking module exe_unit_rtl...
+Found and reported 0 problems.
+
+10.6. Executing OPT pass (performing simple optimizations).
+
+10.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+10.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$345: { \i_data \i_crc } -> { 1'0 \i_data [6:0] \i_crc }
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$369: { \i_data \i_crc } -> { 1'0 \i_data [6:0] \i_crc }
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$372: \i_argA -> { 1'0 \i_argA [6:0] }
+      Replacing known input bits on port B of cell $procmux$372: { 1'0 \i_argA [7:1] } -> { 2'01 \i_argA [6:1] }
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~56 debug messages>
+
+10.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 0 changes.
+
+10.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+10.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+10.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~48 debug messages>
+
+10.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 0 changes.
+
+10.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+
+10.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.6.16. Finished OPT passes. (There is nothing left to do.)
+
+10.7. Executing FSM pass (extract and optimize FSM).
+
+10.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+10.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+10.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+10.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+
+10.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+10.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+10.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+10.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+10.8. Executing OPT pass (performing simple optimizations).
+
+10.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~48 debug messages>
+
+10.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 0 changes.
+
+10.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+
+10.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.8.9. Finished OPT passes. (There is nothing left to do.)
+
+10.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 8 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$procmux$324 ($mux).
+Removed top 1 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$157 ($xor).
+Removed top 2 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$160 ($xor).
+Removed top 3 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$163 ($xor).
+Removed top 4 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$166 ($xor).
+Removed top 5 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$169 ($xor).
+Removed top 6 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$172 ($xor).
+Removed top 7 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$175 ($xor).
+Removed top 8 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$175 ($xor).
+Removed top 8 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$175 ($xor).
+Removed top 1 bits (of 4) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$175 ($xor).
+Removed top 8 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$procmux$327 ($mux).
+Removed top 8 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$172 ($xor).
+Removed top 8 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$172 ($xor).
+Removed top 2 bits (of 5) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$172 ($xor).
+Removed top 8 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$procmux$330 ($mux).
+Removed top 8 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$169 ($xor).
+Removed top 8 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$169 ($xor).
+Removed top 3 bits (of 6) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$169 ($xor).
+Removed top 8 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$procmux$333 ($mux).
+Removed top 8 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$166 ($xor).
+Removed top 8 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$166 ($xor).
+Removed top 6 bits (of 7) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$166 ($xor).
+Removed top 8 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$procmux$336 ($mux).
+Removed top 8 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$163 ($xor).
+Removed top 8 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$163 ($xor).
+Removed top 7 bits (of 8) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$163 ($xor).
+Removed top 8 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$procmux$339 ($mux).
+Removed top 8 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$160 ($xor).
+Removed top 8 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$160 ($xor).
+Removed top 8 bits (of 9) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$160 ($xor).
+Removed top 8 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$procmux$342 ($mux).
+Removed top 8 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$157 ($xor).
+Removed top 8 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$157 ($xor).
+Removed top 9 bits (of 10) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$157 ($xor).
+Removed top 8 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$procmux$345 ($mux).
+Removed top 8 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$154 ($xor).
+Removed top 8 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$154 ($xor).
+Removed top 10 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$154 ($xor).
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$1\crc_tmp[10:0].
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$2\crc_tmp[10:0].
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$3\crc_tmp[10:0].
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$4\crc_tmp[10:0].
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$5\crc_tmp[10:0].
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$6\crc_tmp[10:0].
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$7\crc_tmp[10:0].
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$154_Y.
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$157_Y.
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$160_Y.
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$163_Y.
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$166_Y.
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$169_Y.
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$172_Y.
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.$xor$../MODEL/crc3.sv:24$175_Y.
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.poly_tmp.
+Removed top 9 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$procmux$348 ($mux).
+Removed top 1 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$132 ($xor).
+Removed top 2 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$135 ($xor).
+Removed top 3 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$138 ($xor).
+Removed top 4 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$141 ($xor).
+Removed top 5 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$144 ($xor).
+Removed top 6 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$147 ($xor).
+Removed top 7 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$150 ($xor).
+Removed top 9 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$150 ($xor).
+Removed top 9 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$150 ($xor).
+Removed top 2 bits (of 4) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$150 ($xor).
+Removed top 9 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$procmux$351 ($mux).
+Removed top 9 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$147 ($xor).
+Removed top 9 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$147 ($xor).
+Removed top 3 bits (of 5) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$147 ($xor).
+Removed top 9 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$procmux$354 ($mux).
+Removed top 9 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$144 ($xor).
+Removed top 9 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$144 ($xor).
+Removed top 5 bits (of 6) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$144 ($xor).
+Removed top 9 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$procmux$357 ($mux).
+Removed top 9 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$141 ($xor).
+Removed top 9 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$141 ($xor).
+Removed top 6 bits (of 7) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$141 ($xor).
+Removed top 9 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$procmux$360 ($mux).
+Removed top 9 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$138 ($xor).
+Removed top 9 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$138 ($xor).
+Removed top 7 bits (of 8) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$138 ($xor).
+Removed top 9 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$procmux$363 ($mux).
+Removed top 9 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$135 ($xor).
+Removed top 9 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$135 ($xor).
+Removed top 8 bits (of 9) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$135 ($xor).
+Removed top 9 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$procmux$366 ($mux).
+Removed top 9 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$132 ($xor).
+Removed top 9 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$132 ($xor).
+Removed top 9 bits (of 10) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$132 ($xor).
+Removed top 9 bits (of 11) from mux cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$procmux$369 ($mux).
+Removed top 9 bits (of 11) from port Y of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$129 ($xor).
+Removed top 9 bits (of 11) from port A of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$129 ($xor).
+Removed top 10 bits (of 11) from port B of cell $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$129 ($xor).
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$1\crc_tmp[10:0].
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$2\crc_tmp[10:0].
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$3\crc_tmp[10:0].
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$4\crc_tmp[10:0].
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$5\crc_tmp[10:0].
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$6\crc_tmp[10:0].
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$7\crc_tmp[10:0].
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$129_Y.
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$135_Y.
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$138_Y.
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$141_Y.
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$144_Y.
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$147_Y.
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.$xor$../MODEL/crc4.sv:24$150_Y.
+Removed top 9 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.crc_tmp.
+Removed top 8 bits (of 11) from wire $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.poly_tmp.
+Removed top 5 bits (of 8) from mux cell $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$procmux$274 ($mux).
+Removed top 5 bits (of 8) from mux cell $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$procmux$268 ($mux).
+Removed top 5 bits (of 8) from mux cell $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$procmux$262 ($mux).
+Removed top 5 bits (of 8) from wire $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$1\o_result[7:0].
+Removed top 5 bits (of 8) from wire $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$2\o_result[7:0].
+Removed top 5 bits (of 8) from wire $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.$3\o_result[7:0].
+Removed top 7 bits (of 8) from mux cell $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$procmux$295 ($mux).
+Removed top 6 bits (of 8) from mux cell $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$procmux$292 ($mux).
+Removed top 6 bits (of 8) from mux cell $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$procmux$289 ($mux).
+Removed top 5 bits (of 8) from mux cell $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$procmux$286 ($mux).
+Removed top 5 bits (of 8) from mux cell $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$procmux$283 ($mux).
+Removed top 7 bits (of 8) from wire $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$2\o_result[7:0].
+Removed top 6 bits (of 8) from wire $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$3\o_result[7:0].
+Removed top 6 bits (of 8) from wire $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$4\o_result[7:0].
+Removed top 5 bits (of 8) from wire $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.$5\o_result[7:0].
+Removed top 1 bits (of 8) from mux cell $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.$procmux$372 ($mux).
+Removed top 7 bits (of 8) from mux cell $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$procmux$321 ($mux).
+Removed top 7 bits (of 8) from port A of cell $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$add$../MODEL/zliczanie.sv:19$181 ($add).
+Removed top 6 bits (of 8) from port Y of cell $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$add$../MODEL/zliczanie.sv:19$181 ($add).
+Removed top 7 bits (of 8) from wire $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$1\wynik[7:0].
+Removed top 6 bits (of 8) from wire $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.$add$../MODEL/zliczanie.sv:19$181_Y.
+Removed top 30 bits (of 32) from port B of cell exe_unit_rtl.$eq$../MODEL/exe_unit.sv:69$58 ($eq).
+Removed top 30 bits (of 32) from port B of cell exe_unit_rtl.$add$../MODEL/exe_unit.sv:79$62 ($add).
+Removed top 30 bits (of 32) from port B of cell exe_unit_rtl.$add$../MODEL/exe_unit.sv:79$64 ($add).
+Removed top 30 bits (of 32) from port B of cell exe_unit_rtl.$add$../MODEL/exe_unit.sv:79$66 ($add).
+Removed top 30 bits (of 32) from port B of cell exe_unit_rtl.$add$../MODEL/exe_unit.sv:79$68 ($add).
+Removed top 30 bits (of 32) from port B of cell exe_unit_rtl.$add$../MODEL/exe_unit.sv:79$70 ($add).
+Removed top 30 bits (of 32) from port B of cell exe_unit_rtl.$add$../MODEL/exe_unit.sv:79$72 ($add).
+Removed top 30 bits (of 32) from port B of cell exe_unit_rtl.$add$../MODEL/exe_unit.sv:79$74 ($add).
+Removed top 30 bits (of 32) from port A of cell exe_unit_rtl.$eq$../MODEL/exe_unit.sv:83$76 ($eq).
+Removed top 30 bits (of 32) from port B of cell exe_unit_rtl.$eq$../MODEL/exe_unit.sv:83$76 ($eq).
+Removed top 31 bits (of 32) from mux cell exe_unit_rtl.$procmux$402 ($mux).
+Removed top 1 bits (of 4) from port B of cell exe_unit_rtl.$procmux$454_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell exe_unit_rtl.$procmux$455_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell exe_unit_rtl.$procmux$456_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell exe_unit_rtl.$procmux$457_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell exe_unit_rtl.$procmux$458_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell exe_unit_rtl.$procmux$459_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell exe_unit_rtl.$procmux$460_CMP0 ($eq).
+Removed top 31 bits (of 32) from wire exe_unit_rtl.$1\jedynki[31:0].
+Removed top 5 bits (of 8) from wire exe_unit_rtl.s_crc3.
+Removed top 5 bits (of 8) from wire exe_unit_rtl.s_crc4.
+
+10.10. Executing PEEPOPT pass (run peephole optimizers).
+
+10.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 44 unused wires.
+<suppressed ~6 debug messages>
+
+10.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000:
+  creating $macc model for $add$../MODEL/zliczanie.sv:19$181 ($add).
+  creating $macc model for $add$../MODEL/zliczanie.sv:19$183 ($add).
+  creating $macc model for $add$../MODEL/zliczanie.sv:19$185 ($add).
+  creating $macc model for $add$../MODEL/zliczanie.sv:19$187 ($add).
+  creating $macc model for $add$../MODEL/zliczanie.sv:19$189 ($add).
+  creating $macc model for $add$../MODEL/zliczanie.sv:19$191 ($add).
+  creating $macc model for $add$../MODEL/zliczanie.sv:19$193 ($add).
+  creating $alu model for $macc $add$../MODEL/zliczanie.sv:19$193.
+  creating $alu model for $macc $add$../MODEL/zliczanie.sv:19$191.
+  creating $alu model for $macc $add$../MODEL/zliczanie.sv:19$189.
+  creating $alu model for $macc $add$../MODEL/zliczanie.sv:19$187.
+  creating $alu model for $macc $add$../MODEL/zliczanie.sv:19$185.
+  creating $alu model for $macc $add$../MODEL/zliczanie.sv:19$183.
+  creating $alu model for $macc $add$../MODEL/zliczanie.sv:19$181.
+  creating $alu cell for $add$../MODEL/zliczanie.sv:19$181: $auto$alumacc.cc:485:replace_alu$511
+  creating $alu cell for $add$../MODEL/zliczanie.sv:19$183: $auto$alumacc.cc:485:replace_alu$514
+  creating $alu cell for $add$../MODEL/zliczanie.sv:19$185: $auto$alumacc.cc:485:replace_alu$517
+  creating $alu cell for $add$../MODEL/zliczanie.sv:19$187: $auto$alumacc.cc:485:replace_alu$520
+  creating $alu cell for $add$../MODEL/zliczanie.sv:19$189: $auto$alumacc.cc:485:replace_alu$523
+  creating $alu cell for $add$../MODEL/zliczanie.sv:19$191: $auto$alumacc.cc:485:replace_alu$526
+  creating $alu cell for $add$../MODEL/zliczanie.sv:19$193: $auto$alumacc.cc:485:replace_alu$529
+  created 7 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module exe_unit_rtl:
+  creating $macc model for $add$../MODEL/exe_unit.sv:42$35 ($add).
+  creating $macc model for $add$../MODEL/exe_unit.sv:79$62 ($add).
+  creating $macc model for $add$../MODEL/exe_unit.sv:79$64 ($add).
+  creating $macc model for $add$../MODEL/exe_unit.sv:79$66 ($add).
+  creating $macc model for $add$../MODEL/exe_unit.sv:79$68 ($add).
+  creating $macc model for $add$../MODEL/exe_unit.sv:79$70 ($add).
+  creating $macc model for $add$../MODEL/exe_unit.sv:79$72 ($add).
+  creating $macc model for $add$../MODEL/exe_unit.sv:79$74 ($add).
+  creating $alu model for $macc $add$../MODEL/exe_unit.sv:79$74.
+  creating $alu model for $macc $add$../MODEL/exe_unit.sv:79$72.
+  creating $alu model for $macc $add$../MODEL/exe_unit.sv:79$70.
+  creating $alu model for $macc $add$../MODEL/exe_unit.sv:79$68.
+  creating $alu model for $macc $add$../MODEL/exe_unit.sv:79$66.
+  creating $alu model for $macc $add$../MODEL/exe_unit.sv:79$64.
+  creating $alu model for $macc $add$../MODEL/exe_unit.sv:79$62.
+  creating $alu model for $macc $add$../MODEL/exe_unit.sv:42$35.
+  creating $alu cell for $add$../MODEL/exe_unit.sv:42$35: $auto$alumacc.cc:485:replace_alu$532
+  creating $alu cell for $add$../MODEL/exe_unit.sv:79$62: $auto$alumacc.cc:485:replace_alu$535
+  creating $alu cell for $add$../MODEL/exe_unit.sv:79$64: $auto$alumacc.cc:485:replace_alu$538
+  creating $alu cell for $add$../MODEL/exe_unit.sv:79$66: $auto$alumacc.cc:485:replace_alu$541
+  creating $alu cell for $add$../MODEL/exe_unit.sv:79$68: $auto$alumacc.cc:485:replace_alu$544
+  creating $alu cell for $add$../MODEL/exe_unit.sv:79$70: $auto$alumacc.cc:485:replace_alu$547
+  creating $alu cell for $add$../MODEL/exe_unit.sv:79$72: $auto$alumacc.cc:485:replace_alu$550
+  creating $alu cell for $add$../MODEL/exe_unit.sv:79$74: $auto$alumacc.cc:485:replace_alu$553
+  created 8 $alu and 0 $macc cells.
+
+10.13. Executing SHARE pass (SAT-based resource sharing).
+Found 2 cells in module exe_unit_rtl that may be considered for resource sharing.
+  Analyzing resource sharing options for $sshr$../MODEL/exe_unit.sv:45$39 ($sshr):
+    Found 1 activation_patterns using ctrl signal $procmux$458_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $sshl$../MODEL/exe_unit.sv:46$40 ($sshl):
+    Found 1 activation_patterns using ctrl signal $procmux$457_CMP.
+    No candidates found.
+
+10.14. Executing OPT pass (performing simple optimizations).
+
+10.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+<suppressed ~5 debug messages>
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+<suppressed ~6 debug messages>
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~48 debug messages>
+
+10.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 0 changes.
+
+10.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~13 debug messages>
+
+10.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+<suppressed ~5 debug messages>
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+<suppressed ~6 debug messages>
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~37 debug messages>
+
+10.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 0 changes.
+
+10.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~2 debug messages>
+
+10.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.14.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.14.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~37 debug messages>
+
+10.14.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 0 changes.
+
+10.14.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.14.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.14.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+
+10.14.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.14.23. Finished OPT passes. (There is nothing left to do.)
+
+10.15. Executing MEMORY pass.
+
+10.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+10.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+10.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+10.15.4. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+10.15.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+
+10.15.6. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+10.15.7. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+10.15.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+
+10.15.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+10.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+
+10.17. Executing OPT pass (performing simple optimizations).
+
+10.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+<suppressed ~10 debug messages>
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+<suppressed ~5 debug messages>
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+<suppressed ~7 debug messages>
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+<suppressed ~1 debug messages>
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+<suppressed ~5 debug messages>
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+<suppressed ~1 debug messages>
+Optimizing module exe_unit_rtl.
+<suppressed ~126 debug messages>
+
+10.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 45 unused wires.
+<suppressed ~7 debug messages>
+
+10.17.5. Finished fast OPT passes.
+
+10.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+10.19. Executing OPT pass (performing simple optimizations).
+
+10.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$375: { \i_data [7] $auto$opt_expr.cc:205:group_cell_inputs$565 } -> { 1'0 $auto$opt_expr.cc:205:group_cell_inputs$565 }
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+10.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+    Consolidated identical input bits for $mux cell $procmux$327:
+      Old ports: A=$6\crc_tmp[10:0], B={ $auto$opt_expr.cc:205:group_cell_inputs$559 $6\crc_tmp[10:0] [0] }, Y=$7\crc_tmp[10:0]
+      New ports: A=$6\crc_tmp[10:0] [2:1], B=$auto$opt_expr.cc:205:group_cell_inputs$559, Y=$7\crc_tmp[10:0] [2:1]
+      New connections: $7\crc_tmp[10:0] [0] = $6\crc_tmp[10:0] [0]
+    Consolidated identical input bits for $mux cell $procmux$330:
+      Old ports: A=\i_crc, B={ $auto$opt_expr.cc:205:group_cell_inputs$556 \i_crc [1:0] }, Y=$6\crc_tmp[10:0]
+      New ports: A=\i_crc [2], B=$auto$opt_expr.cc:205:group_cell_inputs$556, Y=$6\crc_tmp[10:0] [2]
+      New connections: $6\crc_tmp[10:0] [1:0] = \i_crc [1:0]
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+    Consolidated identical input bits for $mux cell $procmux$351:
+      Old ports: A=\i_crc [1:0], B={ $auto$opt_expr.cc:205:group_cell_inputs$562 \i_crc [0] }, Y=$7\crc_tmp[10:0]
+      New ports: A=\i_crc [1], B=$auto$opt_expr.cc:205:group_cell_inputs$562, Y=$7\crc_tmp[10:0] [1]
+      New connections: $7\crc_tmp[10:0] [0] = \i_crc [0]
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$256:
+      Old ports: A={ 5'00000 $3\o_result[7:0] }, B=8'00000111, Y=$4\o_result[7:0]
+      New ports: A=$3\o_result[7:0], B=3'111, Y=$4\o_result[7:0] [2:0]
+      New connections: $4\o_result[7:0] [7:3] = 5'00000
+    Consolidated identical input bits for $mux cell $procmux$274:
+      Old ports: A=3'000, B=3'111, Y=$1\o_result[7:0]
+      New ports: A=1'0, B=1'1, Y=$1\o_result[7:0] [0]
+      New connections: $1\o_result[7:0] [2:1] = { $1\o_result[7:0] [0] $1\o_result[7:0] [0] }
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$250:
+      Old ports: A=$4\o_result[7:0], B=8'00000111, Y=$5\o_result[7:0]
+      New ports: A=$4\o_result[7:0] [2:0], B=3'111, Y=$5\o_result[7:0] [2:0]
+      New connections: $5\o_result[7:0] [7:3] = 5'00000
+    Consolidated identical input bits for $mux cell $procmux$268:
+      Old ports: A=$1\o_result[7:0], B=3'111, Y=$2\o_result[7:0]
+      New ports: A=$1\o_result[7:0] [0], B=1'1, Y=$2\o_result[7:0] [0]
+      New connections: $2\o_result[7:0] [2:1] = { $2\o_result[7:0] [0] $2\o_result[7:0] [0] }
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$244:
+      Old ports: A=$5\o_result[7:0], B=8'00000111, Y=$6\o_result[7:0]
+      New ports: A=$5\o_result[7:0] [2:0], B=3'111, Y=$6\o_result[7:0] [2:0]
+      New connections: $6\o_result[7:0] [7:3] = 5'00000
+    Consolidated identical input bits for $mux cell $procmux$262:
+      Old ports: A=$2\o_result[7:0], B=3'111, Y=$3\o_result[7:0]
+      New ports: A=$2\o_result[7:0] [0], B=1'1, Y=$3\o_result[7:0] [0]
+      New connections: $3\o_result[7:0] [2:1] = { $3\o_result[7:0] [0] $3\o_result[7:0] [0] }
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$238:
+      Old ports: A=$6\o_result[7:0], B=8'00000111, Y=$7\o_result[7:0]
+      New ports: A=$6\o_result[7:0] [2:0], B=3'111, Y=$7\o_result[7:0] [2:0]
+      New connections: $7\o_result[7:0] [7:3] = 5'00000
+    Consolidated identical input bits for $mux cell $procmux$256:
+      Old ports: A=$3\o_result[7:0], B=3'111, Y=$4\o_result[7:0] [2:0]
+      New ports: A=$3\o_result[7:0] [0], B=1'1, Y=$4\o_result[7:0] [0]
+      New connections: $4\o_result[7:0] [2:1] = { $4\o_result[7:0] [0] $4\o_result[7:0] [0] }
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$232:
+      Old ports: A=$7\o_result[7:0], B=8'00000111, Y=\o_result
+      New ports: A=$7\o_result[7:0] [2:0], B=3'111, Y=\o_result [2:0]
+      New connections: \o_result [7:3] = 5'00000
+    Consolidated identical input bits for $mux cell $procmux$250:
+      Old ports: A=$4\o_result[7:0] [2:0], B=3'111, Y=$5\o_result[7:0] [2:0]
+      New ports: A=$4\o_result[7:0] [0], B=1'1, Y=$5\o_result[7:0] [0]
+      New connections: $5\o_result[7:0] [2:1] = { $5\o_result[7:0] [0] $5\o_result[7:0] [0] }
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$244:
+      Old ports: A=$5\o_result[7:0] [2:0], B=3'111, Y=$6\o_result[7:0] [2:0]
+      New ports: A=$5\o_result[7:0] [0], B=1'1, Y=$6\o_result[7:0] [0]
+      New connections: $6\o_result[7:0] [2:1] = { $6\o_result[7:0] [0] $6\o_result[7:0] [0] }
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$238:
+      Old ports: A=$6\o_result[7:0] [2:0], B=3'111, Y=$7\o_result[7:0] [2:0]
+      New ports: A=$6\o_result[7:0] [0], B=1'1, Y=$7\o_result[7:0] [0]
+      New connections: $7\o_result[7:0] [2:1] = { $7\o_result[7:0] [0] $7\o_result[7:0] [0] }
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$232:
+      Old ports: A=$7\o_result[7:0] [2:0], B=3'111, Y=\o_result [2:0]
+      New ports: A=$7\o_result[7:0] [0], B=1'1, Y=\o_result [0]
+      New connections: \o_result [2:1] = { \o_result [0] \o_result [0] }
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$280:
+      Old ports: A={ 5'00000 $6\o_result[7:0] [2:0] }, B=8'00000110, Y=$7\o_result[7:0]
+      New ports: A=$6\o_result[7:0] [2:0], B=3'110, Y=$7\o_result[7:0] [2:0]
+      New connections: $7\o_result[7:0] [7:3] = 5'00000
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$277:
+      Old ports: A=$7\o_result[7:0], B=8'00000111, Y=\o_result
+      New ports: A=$7\o_result[7:0] [2:0], B=3'111, Y=\o_result [2:0]
+      New connections: \o_result [7:3] = 5'00000
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$318:
+      Old ports: A={ 7'0000000 \i_argB [0] }, B={ 6'000000 $add$../MODEL/zliczanie.sv:19$181_Y }, Y=$2\wynik[7:0]
+      New ports: A={ 1'0 \i_argB [0] }, B=$add$../MODEL/zliczanie.sv:19$181_Y, Y=$2\wynik[7:0] [1:0]
+      New connections: $2\wynik[7:0] [7:2] = 6'000000
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+    Consolidated identical input bits for $mux cell $procmux$399:
+      Old ports: A={ 31'0000000000000000000000000000000 \o_result [0] }, B={ 30'000000000000000000000000000000 $add$../MODEL/exe_unit.sv:66$45_Y [1:0] }, Y=$10\jedynki[31:0]
+      New ports: A={ 1'0 \o_result [0] }, B=$add$../MODEL/exe_unit.sv:66$45_Y [1:0], Y=$10\jedynki[31:0] [1:0]
+      New connections: $10\jedynki[31:0] [31:2] = 30'000000000000000000000000000000
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 20 changes.
+
+10.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.19.6. Executing OPT_SHARE pass.
+
+10.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+
+10.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+<suppressed ~8 debug messages>
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+<suppressed ~21 debug messages>
+Optimizing module exe_unit_rtl.
+<suppressed ~117 debug messages>
+
+10.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+10.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$315:
+      Old ports: A={ 6'000000 $2\wynik[7:0] [1:0] }, B=$add$../MODEL/zliczanie.sv:19$183_Y, Y=$3\wynik[7:0]
+      New ports: A={ 1'0 $2\wynik[7:0] [1:0] }, B=$add$../MODEL/zliczanie.sv:19$183_Y [2:0], Y=$3\wynik[7:0] [2:0]
+      New connections: $3\wynik[7:0] [7:3] = 5'00000
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+    Consolidated identical input bits for $mux cell $procmux$396:
+      Old ports: A={ 30'000000000000000000000000000000 $10\jedynki[31:0] [1:0] }, B=$add$../MODEL/exe_unit.sv:66$47_Y, Y=$11\jedynki[31:0]
+      New ports: A={ 1'0 $10\jedynki[31:0] [1:0] }, B=$add$../MODEL/exe_unit.sv:66$47_Y [2:0], Y=$11\jedynki[31:0] [2:0]
+      New connections: $11\jedynki[31:0] [31:3] = 29'00000000000000000000000000000
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 2 changes.
+
+10.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+<suppressed ~18 debug messages>
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 6 cells.
+
+10.19.14. Executing OPT_SHARE pass.
+
+10.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 41 unused wires.
+<suppressed ~3 debug messages>
+
+10.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+<suppressed ~17 debug messages>
+Optimizing module exe_unit_rtl.
+<suppressed ~113 debug messages>
+
+10.19.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.19.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+10.19.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$312:
+      Old ports: A={ 5'00000 $3\wynik[7:0] [2:0] }, B=$add$../MODEL/zliczanie.sv:19$185_Y, Y=$4\wynik[7:0]
+      New ports: A={ 1'0 $3\wynik[7:0] [2:0] }, B=$add$../MODEL/zliczanie.sv:19$185_Y [3:0], Y=$4\wynik[7:0] [3:0]
+      New connections: $4\wynik[7:0] [7:4] = 4'0000
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+    Consolidated identical input bits for $mux cell $procmux$393:
+      Old ports: A={ 29'00000000000000000000000000000 $11\jedynki[31:0] [2:0] }, B=$add$../MODEL/exe_unit.sv:66$49_Y, Y=$12\jedynki[31:0]
+      New ports: A={ 1'0 $11\jedynki[31:0] [2:0] }, B=$add$../MODEL/exe_unit.sv:66$49_Y [3:0], Y=$12\jedynki[31:0] [3:0]
+      New connections: $12\jedynki[31:0] [31:4] = 28'0000000000000000000000000000
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 2 changes.
+
+10.19.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.19.22. Executing OPT_SHARE pass.
+
+10.19.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.19.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~2 debug messages>
+
+10.19.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+<suppressed ~13 debug messages>
+Optimizing module exe_unit_rtl.
+<suppressed ~109 debug messages>
+
+10.19.26. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.19.27. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+10.19.28. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$309:
+      Old ports: A={ 4'0000 $4\wynik[7:0] [3:0] }, B=$add$../MODEL/zliczanie.sv:19$187_Y, Y=$5\wynik[7:0]
+      New ports: A={ 1'0 $4\wynik[7:0] [3:0] }, B=$add$../MODEL/zliczanie.sv:19$187_Y [4:0], Y=$5\wynik[7:0] [4:0]
+      New connections: $5\wynik[7:0] [7:5] = 3'000
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+    Consolidated identical input bits for $mux cell $procmux$390:
+      Old ports: A={ 28'0000000000000000000000000000 $12\jedynki[31:0] [3:0] }, B=$add$../MODEL/exe_unit.sv:66$51_Y, Y=$13\jedynki[31:0]
+      New ports: A={ 1'0 $12\jedynki[31:0] [3:0] }, B=$add$../MODEL/exe_unit.sv:66$51_Y [4:0], Y=$13\jedynki[31:0] [4:0]
+      New connections: $13\jedynki[31:0] [31:5] = 27'000000000000000000000000000
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 2 changes.
+
+10.19.29. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.19.30. Executing OPT_SHARE pass.
+
+10.19.31. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.19.32. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 30 unused wires.
+<suppressed ~2 debug messages>
+
+10.19.33. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+<suppressed ~9 debug messages>
+Optimizing module exe_unit_rtl.
+<suppressed ~105 debug messages>
+
+10.19.34. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.19.35. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+10.19.36. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$306:
+      Old ports: A={ 3'000 $5\wynik[7:0] [4:0] }, B=$add$../MODEL/zliczanie.sv:19$189_Y, Y=$6\wynik[7:0]
+      New ports: A={ 1'0 $5\wynik[7:0] [4:0] }, B=$add$../MODEL/zliczanie.sv:19$189_Y [5:0], Y=$6\wynik[7:0] [5:0]
+      New connections: $6\wynik[7:0] [7:6] = 2'00
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+    Consolidated identical input bits for $mux cell $procmux$387:
+      Old ports: A={ 27'000000000000000000000000000 $13\jedynki[31:0] [4:0] }, B=$add$../MODEL/exe_unit.sv:66$53_Y, Y=$14\jedynki[31:0]
+      New ports: A={ 1'0 $13\jedynki[31:0] [4:0] }, B=$add$../MODEL/exe_unit.sv:66$53_Y [5:0], Y=$14\jedynki[31:0] [5:0]
+      New connections: $14\jedynki[31:0] [31:6] = 26'00000000000000000000000000
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 2 changes.
+
+10.19.37. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.19.38. Executing OPT_SHARE pass.
+
+10.19.39. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.19.40. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 28 unused wires.
+<suppressed ~2 debug messages>
+
+10.19.41. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+<suppressed ~5 debug messages>
+Optimizing module exe_unit_rtl.
+<suppressed ~101 debug messages>
+
+10.19.42. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.19.43. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+10.19.44. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+    Consolidated identical input bits for $mux cell $procmux$303:
+      Old ports: A={ 2'00 $6\wynik[7:0] [5:0] }, B=$add$../MODEL/zliczanie.sv:19$191_Y, Y=$7\wynik[7:0]
+      New ports: A={ 1'0 $6\wynik[7:0] [5:0] }, B=$add$../MODEL/zliczanie.sv:19$191_Y [6:0], Y=$7\wynik[7:0] [6:0]
+      New connections: $7\wynik[7:0] [7] = 1'0
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+    Consolidated identical input bits for $mux cell $procmux$384:
+      Old ports: A={ 26'00000000000000000000000000 $14\jedynki[31:0] [5:0] }, B=$add$../MODEL/exe_unit.sv:66$55_Y, Y=$15\jedynki[31:0]
+      New ports: A={ 1'0 $14\jedynki[31:0] [5:0] }, B=$add$../MODEL/exe_unit.sv:66$55_Y [6:0], Y=$15\jedynki[31:0] [6:0]
+      New connections: $15\jedynki[31:0] [31:7] = 25'0000000000000000000000000
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 2 changes.
+
+10.19.45. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.19.46. Executing OPT_SHARE pass.
+
+10.19.47. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.19.48. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 26 unused wires.
+<suppressed ~2 debug messages>
+
+10.19.49. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+<suppressed ~97 debug messages>
+
+10.19.50. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.19.51. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+10.19.52. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+    Consolidated identical input bits for $mux cell $procmux$381:
+      Old ports: A={ 25'0000000000000000000000000 $15\jedynki[31:0] [6:0] }, B=$add$../MODEL/exe_unit.sv:66$57_Y, Y=\jedynki
+      New ports: A={ 1'0 $15\jedynki[31:0] [6:0] }, B=$add$../MODEL/exe_unit.sv:66$57_Y [7:0], Y=\jedynki [7:0]
+      New connections: \jedynki [31:8] = 24'000000000000000000000000
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 1 changes.
+
+10.19.53. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.19.54. Executing OPT_SHARE pass.
+
+10.19.55. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.19.56. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 24 unused wires.
+<suppressed ~1 debug messages>
+
+10.19.57. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+<suppressed ~1 debug messages>
+
+10.19.58. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.19.59. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+10.19.60. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 0 changes.
+
+10.19.61. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.19.62. Executing OPT_SHARE pass.
+
+10.19.63. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.19.64. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+10.19.65. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+<suppressed ~1 debug messages>
+
+10.19.66. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.19.67. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \exe_unit_rtl..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~23 debug messages>
+
+10.19.68. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+  Optimizing cells in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+  Optimizing cells in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+  Optimizing cells in module \exe_unit_rtl.
+Performed a total of 0 changes.
+
+10.19.69. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+Removed a total of 0 cells.
+
+10.19.70. Executing OPT_SHARE pass.
+
+10.19.71. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.19.72. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+
+10.19.73. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+Optimizing module exe_unit_rtl.
+
+10.19.74. Finished OPT passes. (There is nothing left to do.)
+
+10.20. Executing TECHMAP pass (map to technology primitives).
+
+10.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+10.20.2. Continuing TECHMAP pass.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$constmap:f99840ec908483ed147148e5b457b3755f98764b$paramod$3dfaed435ea86e8aee4c4c698eca2e70f0f24558\_90_shift_ops_shr_shl_sshl_sshr for cells of type $sshr.
+Using template $paramod$constmap:f99840ec908483ed147148e5b457b3755f98764b$paramod$8f2e177c5bfdf57358fab00c9c8bd808d7a66db1\_90_shift_ops_shr_shl_sshl_sshr for cells of type $sshl.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$dbcdc7e8aa1a4080cea2deda6fdc8772064f4d90\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$00298f3f8094950cb9a5ff2fda48d0d8bde8806c\_90_alu for cells of type $alu.
+Using template $paramod$4ccbe221165818e15f326ddee3d1183c7924e12f\_90_alu for cells of type $alu.
+Using template $paramod$3294ee6476b7aed16e63c3aab64dbbc778f014df\_90_pmux for cells of type $pmux.
+Using template $paramod$7e708ae28ab761f11d0fb59d3ffc72f6a4baf5d9\_90_alu for cells of type $alu.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_90_alu for cells of type $alu.
+Using template $paramod$78e969f2586efcf3a5b0b0440bcca0db83d5cca2\_90_alu for cells of type $alu.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000111 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000110 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001001 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_90_alu for cells of type $alu.
+Using template $paramod$1d1e68f77481583066c6d429218f48ea9d5739b3\_90_alu for cells of type $alu.
+No more expansions possible.
+<suppressed ~1919 debug messages>
+
+10.21. Executing OPT pass (performing simple optimizations).
+
+10.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+<suppressed ~1 debug messages>
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+<suppressed ~206 debug messages>
+Optimizing module exe_unit_rtl.
+<suppressed ~297 debug messages>
+
+10.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+<suppressed ~21 debug messages>
+Finding identical cells in module `\exe_unit_rtl'.
+<suppressed ~174 debug messages>
+Removed a total of 65 cells.
+
+10.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 50 unused cells and 640 unused wires.
+<suppressed ~52 debug messages>
+
+10.21.5. Finished fast OPT passes.
+
+10.22. Executing ABC pass (technology mapping using ABC).
+
+10.22.1. Extracting gate netlist of module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval' to `<abc-temp-dir>/input.blif'..
+Extracted 12 gates and 21 wires to a netlist network with 9 inputs and 3 outputs.
+
+10.22.1.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+10.22.1.2. Re-integrating ABC results.
+ABC RESULTS:            ANDNOT cells:        2
+ABC RESULTS:               MUX cells:        6
+ABC RESULTS:               NOT cells:        3
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:              XNOR cells:        2
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:        internal signals:        9
+ABC RESULTS:           input signals:        9
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+10.22.2. Extracting gate netlist of module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval' to `<abc-temp-dir>/input.blif'..
+Extracted 6 gates and 12 wires to a netlist network with 6 inputs and 2 outputs.
+
+10.22.2.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+10.22.2.2. Re-integrating ABC results.
+ABC RESULTS:               MUX cells:        3
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:               XOR cells:        3
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+10.22.3. Extracting gate netlist of module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 21 gates and 29 wires to a netlist network with 8 inputs and 1 outputs.
+
+10.22.3.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+10.22.3.2. Re-integrating ABC results.
+ABC RESULTS:                OR cells:        7
+ABC RESULTS:        internal signals:       20
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+
+10.22.4. Extracting gate netlist of module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 14 gates and 23 wires to a netlist network with 7 inputs and 3 outputs.
+
+10.22.4.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+10.22.4.2. Re-integrating ABC results.
+ABC RESULTS:            ANDNOT cells:        4
+ABC RESULTS:               NOR cells:        2
+ABC RESULTS:                OR cells:        8
+ABC RESULTS:        internal signals:       13
+ABC RESULTS:           input signals:        7
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+10.22.5. Extracting gate netlist of module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 7 gates and 16 wires to a netlist network with 8 inputs and 7 outputs.
+
+10.22.5.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+10.22.5.2. Re-integrating ABC results.
+ABC RESULTS:               MUX cells:        6
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:        internal signals:        1
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+10.22.6. Extracting gate netlist of module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 14 gates and 23 wires to a netlist network with 8 inputs and 7 outputs.
+
+10.22.6.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+10.22.6.2. Re-integrating ABC results.
+ABC RESULTS:                OR cells:        7
+ABC RESULTS:               XOR cells:        6
+ABC RESULTS:        internal signals:        8
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+10.22.7. Extracting gate netlist of module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 90 gates and 99 wires to a netlist network with 8 inputs and 8 outputs.
+
+10.22.7.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+10.22.7.2. Re-integrating ABC results.
+ABC RESULTS:            ANDNOT cells:       14
+ABC RESULTS:               MUX cells:       21
+ABC RESULTS:              NAND cells:        4
+ABC RESULTS:               NOR cells:        6
+ABC RESULTS:               NOT cells:       11
+ABC RESULTS:                OR cells:       14
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:              XNOR cells:        7
+ABC RESULTS:               XOR cells:       21
+ABC RESULTS:        internal signals:       83
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+10.22.8. Extracting gate netlist of module `\exe_unit_rtl' to `<abc-temp-dir>/input.blif'..
+Extracted 459 gates and 526 wires to a netlist network with 66 inputs and 12 outputs.
+
+10.22.8.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+10.22.8.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       33
+ABC RESULTS:            ANDNOT cells:      124
+ABC RESULTS:               MUX cells:       55
+ABC RESULTS:              NAND cells:       11
+ABC RESULTS:               NOR cells:       30
+ABC RESULTS:               NOT cells:       17
+ABC RESULTS:                OR cells:      103
+ABC RESULTS:             ORNOT cells:       28
+ABC RESULTS:              XNOR cells:       12
+ABC RESULTS:               XOR cells:       30
+ABC RESULTS:        internal signals:      448
+ABC RESULTS:           input signals:       66
+ABC RESULTS:          output signals:       12
+Removing temp directory.
+
+10.23. Executing OPT pass (performing simple optimizations).
+
+10.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval.
+<suppressed ~5 debug messages>
+Optimizing module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000.
+Optimizing module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000.
+Optimizing module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000.
+<suppressed ~21 debug messages>
+Optimizing module exe_unit_rtl.
+<suppressed ~37 debug messages>
+
+10.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Finding identical cells in module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Finding identical cells in module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Finding identical cells in module `\exe_unit_rtl'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+10.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 7 unused cells and 361 unused wires.
+<suppressed ~15 debug messages>
+
+10.23.5. Finished fast OPT passes.
+
+10.24. Executing HIERARCHY pass (managing design hierarchy).
+
+10.24.1. Analyzing design hierarchy..
+Top module:  \exe_unit_rtl
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval
+Used module:     $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000
+Used module:     $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000
+Used module:     $paramod\u1intou2\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000
+
+10.24.2. Analyzing design hierarchy..
+Top module:  \exe_unit_rtl
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval
+Used module:     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval
+Used module:     $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000
+Used module:     $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000
+Used module:     $paramod\u1intou2\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000
+Used module:     $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000
+Removed 0 unused modules.
+
+10.25. Printing statistics.
+
+=== $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval ===
+
+   Number of wires:                 21
+   Number of wire bits:             78
+   Number of public wires:           7
+   Number of public wire bits:      64
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 17
+     $_ANDNOT_                       2
+     $_MUX_                          6
+     $_NOT_                          2
+     $_OR_                           1
+     $_XNOR_                         2
+     $_XOR_                          4
+
+=== $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval ===
+
+   Number of wires:                 11
+   Number of wire bits:             59
+   Number of public wires:           7
+   Number of public wire bits:      55
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  6
+     $_MUX_                          3
+     $_XOR_                          3
+
+=== $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000 ===
+
+   Number of wires:                  9
+   Number of wire bits:             54
+   Number of public wires:           3
+   Number of public wire bits:      48
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $_OR_                           7
+
+=== $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000 ===
+
+   Number of wires:                 14
+   Number of wire bits:             59
+   Number of public wires:           3
+   Number of public wire bits:      48
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 14
+     $_ANDNOT_                       4
+     $_NOR_                          2
+     $_OR_                           8
+
+=== $paramod\u1intou2\BITS=s32'00000000000000000000000000001000 ===
+
+   Number of wires:                  2
+   Number of wire bits:             16
+   Number of public wires:           2
+   Number of public wire bits:      16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $_MUX_                          6
+     $_OR_                           1
+
+=== $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000 ===
+
+   Number of wires:                  8
+   Number of wire bits:             22
+   Number of public wires:           2
+   Number of public wire bits:      16
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 13
+     $_OR_                           7
+     $_XOR_                          6
+
+=== $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000 ===
+
+   Number of wires:                 95
+   Number of wire bits:            161
+   Number of public wires:           6
+   Number of public wire bits:      72
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 97
+     $_ANDNOT_                      14
+     $_MUX_                         21
+     $_NAND_                         4
+     $_NOR_                          6
+     $_NOT_                          9
+     $_ORNOT_                        1
+     $_OR_                          14
+     $_XNOR_                         7
+     $_XOR_                         21
+
+=== exe_unit_rtl ===
+
+   Number of wires:                444
+   Number of wire bits:            569
+   Number of public wires:          17
+   Number of public wire bits:     142
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                446
+     $_ANDNOT_                     123
+     $_AND_                         33
+     $_MUX_                         55
+     $_NAND_                        11
+     $_NOR_                         30
+     $_NOT_                         14
+     $_ORNOT_                       28
+     $_OR_                         103
+     $_XNOR_                        12
+     $_XOR_                         30
+     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval      1
+     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval      1
+     $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000      1
+     $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000      1
+     $paramod\u1intou2\BITS=s32'00000000000000000000000000001000      1
+     $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000      1
+     $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000      1
+
+=== design hierarchy ===
+
+   exe_unit_rtl                      1
+     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval      1
+     $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval      1
+     $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000      1
+     $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000      1
+     $paramod\u1intou2\BITS=s32'00000000000000000000000000001000      1
+     $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000      1
+     $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000      1
+
+   Number of wires:                604
+   Number of wire bits:           1018
+   Number of public wires:          47
+   Number of public wire bits:     461
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                600
+     $_ANDNOT_                     143
+     $_AND_                         33
+     $_MUX_                         91
+     $_NAND_                        15
+     $_NOR_                         38
+     $_NOT_                         25
+     $_ORNOT_                       29
+     $_OR_                         141
+     $_XNOR_                        21
+     $_XOR_                         64
+
+10.26. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval...
+Checking module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval...
+Checking module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000...
+Checking module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000...
+Checking module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000...
+Checking module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000...
+Checking module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000...
+Checking module exe_unit_rtl...
+Found and reported 0 problems.
+
+11. Executing ABC pass (technology mapping using ABC).
+
+11.1. Extracting gate netlist of module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval' to `<abc-temp-dir>/input.blif'..
+Extracted 17 gates and 26 wires to a netlist network with 9 inputs and 3 outputs.
+
+11.1.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 7 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        6
+ABC RESULTS:               XOR cells:        6
+ABC RESULTS:        internal signals:       14
+ABC RESULTS:           input signals:        9
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+11.2. Extracting gate netlist of module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval' to `<abc-temp-dir>/input.blif'..
+Extracted 6 gates and 12 wires to a netlist network with 6 inputs and 2 outputs.
+
+11.2.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 7 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.2.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:               XOR cells:        3
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        2
+Removing temp directory.
+
+11.3. Extracting gate netlist of module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 7 gates and 15 wires to a netlist network with 8 inputs and 1 outputs.
+
+11.3.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 7 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.3.2. Re-integrating ABC results.
+ABC RESULTS:                OR cells:        7
+ABC RESULTS:        internal signals:        6
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+
+11.4. Extracting gate netlist of module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 14 gates and 21 wires to a netlist network with 7 inputs and 3 outputs.
+
+11.4.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 7 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.4.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:                OR cells:        8
+ABC RESULTS:        internal signals:       11
+ABC RESULTS:           input signals:        7
+ABC RESULTS:          output signals:        3
+Removing temp directory.
+
+11.5. Extracting gate netlist of module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 7 gates and 15 wires to a netlist network with 8 inputs and 7 outputs.
+
+11.5.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 7 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.5.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       12
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:                OR cells:        7
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+11.6. Extracting gate netlist of module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 13 gates and 21 wires to a netlist network with 8 inputs and 7 outputs.
+
+11.6.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 7 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.6.2. Re-integrating ABC results.
+ABC RESULTS:                OR cells:        7
+ABC RESULTS:               XOR cells:        6
+ABC RESULTS:        internal signals:        6
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+11.7. Extracting gate netlist of module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000' to `<abc-temp-dir>/input.blif'..
+Extracted 97 gates and 105 wires to a netlist network with 8 inputs and 8 outputs.
+
+11.7.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 7 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.7.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       19
+ABC RESULTS:               NOT cells:        6
+ABC RESULTS:                OR cells:       12
+ABC RESULTS:               XOR cells:        8
+ABC RESULTS:              ZERO cells:        4
+ABC RESULTS:        internal signals:       89
+ABC RESULTS:           input signals:        8
+ABC RESULTS:          output signals:        8
+Removing temp directory.
+
+11.8. Extracting gate netlist of module `\exe_unit_rtl' to `<abc-temp-dir>/input.blif'..
+Extracted 439 gates and 505 wires to a netlist network with 66 inputs and 12 outputs.
+
+11.8.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 7 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+11.8.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:      196
+ABC RESULTS:               NOT cells:       55
+ABC RESULTS:                OR cells:      169
+ABC RESULTS:               XOR cells:       25
+ABC RESULTS:        internal signals:      427
+ABC RESULTS:           input signals:       66
+ABC RESULTS:          output signals:       12
+Removing temp directory.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval..
+Finding unused cells or wires in module $paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval..
+Finding unused cells or wires in module $paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u1intou2\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\u2intoGray\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module $paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000..
+Finding unused cells or wires in module \exe_unit_rtl..
+Removed 0 unused cells and 720 unused wires.
+<suppressed ~8 debug messages>
+
+13. Executing Verilog backend.
+Dumping module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc3_eval'.
+Dumping module `$paramod$0f84a70ebc21543b73842bcb7d89a48776b55cdb\crc4_eval'.
+Dumping module `$paramod\dekoder_piorytetowy\M=s32'00000000000000000000000000001000'.
+Dumping module `$paramod\thermometer2U2\LEN=s32'00000000000000000000000000001000'.
+Dumping module `$paramod\u1intou2\BITS=s32'00000000000000000000000000001000'.
+Dumping module `$paramod\u2intoGray\BITS=s32'00000000000000000000000000001000'.
+Dumping module `$paramod\zliczanie_1\BITS=s32'00000000000000000000000000001000'.
+Dumping module `\exe_unit_rtl'.
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: 9ce896aaf2, CPU: user 1.35s system 0.02s, MEM: 23.09 MB peak
+Yosys 0.12+3 (git sha1 UNKNOWN, gcc 11.2.1 -O2 -fexceptions -fstack-protector-strong -m64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fPIC -Os)
+Time spent: 42% 2x abc (0 sec), 16% 44x opt_expr (0 sec), ...
